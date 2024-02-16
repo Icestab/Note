@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "个人杂记"
-  text: "A Notes Site"
+  name: '个人杂记'
+  text: 'A Notes Site'
   tagline: Accept what was and what is, and you'll more positive energy to pursue what will be.
   actions:
     - theme: brand
@@ -12,7 +12,7 @@ hero:
       link: /guide/Software
     - theme: alt
       text: 在GitHub上查看
-      link: https://github.com/Icestab/Notes2
+      link: https://github.com/Icestab/Note
   image:
     src: /node.webp
     alt: 网页图标
@@ -24,4 +24,3 @@ features:
   - title: 生活杂记
     details: 生活途中有趣的事，折腾一切事物的点点滴滴。
 ---
-
