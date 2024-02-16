@@ -26,7 +26,7 @@ jobs:
         run: bun install
 
       - name: Build
-        run: -
+        run: |-
           bun run docs:build # 确保这里的构建命令与你的实际命令一致
 
       - name: Deploy
