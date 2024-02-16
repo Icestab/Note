@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/Note/',
   head: [
     [
       'link', // 设置 favicon.ico，注意图片放在 public 文件夹下
