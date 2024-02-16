@@ -46,7 +46,6 @@ export default defineConfig({
           { text: '红米2100路由器刷机', link: '/life/RM2100' },
           { text: '科学上网', link: '/life/ss/vpn' },
           { text: 'OpenWRT 配置 WireGuard 服务端及客户端配置教程', link: '/life/wg/wg' },
-          { text: 'oh-my-zsh安装与基本配置', link: '/life/oh-my-zsh' },
           { text: 'Netflix UWP Windows客户端除网络隔离的方法', link: '/life/netflix' },
           { text: 'Ventoy 安装教程', link: '/life/ventoy/ventoy' },
           { text: 'AI - stable-diffusion(AI绘画)的搭建与使用', link: '/life/sdweb/sdweb' },
@@ -75,6 +74,7 @@ export default defineConfig({
           { text: 'Linux命令', link: '/study/questions/linux' },
           { text: 'SSH防止暴力破解', link: '/study/questions/ssh' },
           { text: 'Centos7 升级内核版本', link: '/study/questions/centos7' },
+          { text: 'oh-my-zsh安装与基本配置', link: '/study/questions/oh-my-zsh' },
           {
             text: 'ubuntu-20.04.4-server安装与基本配置',
             link: '/study/questions/ubuntu-20.04.4-server'
