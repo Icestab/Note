@@ -87,7 +87,7 @@ export default defineConfig({
     docFooter: { prev: '上一页', next: '下一页' },
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2023-present flysch'
+      copyright: 'Copyright © 2024-present flysch'
     },
     lastUpdatedText: '上次更新',
     returnToTopLabel: '返回顶部',
