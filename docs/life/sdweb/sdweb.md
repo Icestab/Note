@@ -1,4 +1,4 @@
-# AI - stable-diffusion(AI绘画)的搭建与使用
+# AI - stable-diffusion(AI 绘画)的搭建与使用
 
 ## 一、环境搭建
 
@@ -12,7 +12,6 @@
   https://github.com/Sygil-Dev/sygil-webui
 
 其中，AUTOMATIC1111 的 stable-diffusion-webui 是目前功能最多最好用的，强烈推荐，下面就来介绍如何使用它。
-
 
 ### 1、下载项目
 
@@ -39,7 +38,6 @@ python --version
 - 官方的 conda 环境安装说明：https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs#alternative-installation-on-windows-using-conda
 
 - anaconda 常用命令：https://blog.csdn.net/ligous/article/details/124209700
-  
 
 ### 3、CUDA 环境
 
@@ -76,6 +74,7 @@ nvcc --version
 ### 4、启动项目
 
 在安装配置好运行环境之后，直接运行工程下的 webui-user.bat 文件即可（如果是类 Unix 系统，则运行 webui-user.sh）。首次启动会自动下载一些 Python 依赖库（具体哪些库请看工程下的 requirements.txt） ，以及项目需要用到的配置和模型文件（比如：v1-5-pruned-emaonly.safetensors，将近 4 个 G~），初始化一次之后，下次启动就快了。
+
 ```bash
 Launching Web UI with arguments:
 ...
@@ -87,7 +86,7 @@ To create a public link, set `share=True` in `launch()`.
 
 ![4](4.webp)
 
-::: tip  温馨提示：
+::: tip 温馨提示：
 
 该项目是英文页面，可以使用浏览器的翻译功能转成中文来使用~
 
@@ -111,17 +110,17 @@ stable-diffusion-webui 的功能很多，主要有如下 2 个：
 
 在开始使用文生图之前，有必要了解以下几个参数的含义：
 
-| 参数            | 说明                                                         |
-| ---- | ---- |
-| Prompt          | 提示词（正向）                                               |
-| Negative prompt | 消极的提示词（反向）                                         |
-| Width & Height  | 要生成的图片尺寸。尺寸越大，越耗性能，耗时越久。             |
+| 参数            | 说明                                                                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Prompt          | 提示词（正向）                                                                                                                        |
+| Negative prompt | 消极的提示词（反向）                                                                                                                  |
+| Width & Height  | 要生成的图片尺寸。尺寸越大，越耗性能，耗时越久。                                                                                      |
 | CFG scale       | AI 对描述参数（Prompt）的倾向程度。值越小生成的图片越偏离你的描述，但越符合逻辑；值越大则生成的图片越符合你的描述，但可能不符合逻辑。 |
-| Sampling method | 采样方法。有很多种，但只是采样算法上有差别，没有好坏之分，选用适合的即可。 |
-| Sampling steps | 采样步长。太小的话采样的随机性会很高，太大的话采样的效率会很低，拒绝概率高(可以理解为没有采样到,采样的结果被舍弃了)。 |
-| Seed            | 随机数种子。生成每张图片时的随机种子，这个种子是用来作为确定扩散初始状态的基础。不懂的话，用随机的即可。 |
+| Sampling method | 采样方法。有很多种，但只是采样算法上有差别，没有好坏之分，选用适合的即可。                                                            |
+| Sampling steps  | 采样步长。太小的话采样的随机性会很高，太大的话采样的效率会很低，拒绝概率高(可以理解为没有采样到,采样的结果被舍弃了)。                 |
+| Seed            | 随机数种子。生成每张图片时的随机种子，这个种子是用来作为确定扩散初始状态的基础。不懂的话，用随机的即可。                              |
 
-::: tip 
+::: tip
 
 以上对参数的解析源自以下文章：
 
@@ -158,7 +157,7 @@ Seed：1791574510
 ### 2、模型文件
 
 眼尖的你可能发现了，上面截图里左上角 Stable Diffusion checkpoint 的值怎么跟之前截图里的不一样？这是因为我换了一个模型文件，还记得前面提到那个将近 4 个 G 大小的模型文件（v1-5-pruned-emaonly.safetensors）吗？那是 stable-diffusion-webui 的默认模型文件，用这个模型文件生成出来的图片比较丑，因此我换了另一个模型文件。模型文件下载的网站几个，比较出名的就是 civitai，这上面共享的都是别人训练好的模型。
-::: tip  模型文件下载地址：
+::: tip 模型文件下载地址：
 
 - `civitai`：https://civitai.com/
 
@@ -208,21 +207,20 @@ Seed：1791574510
 前面说到，stable-diffusion-webui 是可以配置启动参数的，这是官方的 wiki：
 
 - 配置参数文档：https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Command-Line-Arguments-and-Settings
-  
 
 ### 1、常用参数
 
 这里列几个常用的参数说明一下：
 
-| 参数                           | 说明                                                         |
-| :----------------------------- | ------------------------------------------------------------ |
+| 参数                           | 说明                                                                                                                                                  |
+| :----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | –listen                        | 默认启动绑定的 ip 是 `127.0.0.1`，只能是你自己电脑可以访问 webui，如果你想让同个局域网的人都可以访问的话，可以配置该参数（会自动绑定 `0.0.0.0` ip）。 |
-| –port xxx                      | 默认端口是 `7860`，如果想换个端口，可以配置该参数，例如：`--port 8888`。 |
-| –gradio-auth username:password | 如果你希望给 webui 设置登录密码，可以配置该参数，例如：`--gradio-auth GitLqr:123456`。 |
-| –use-cpu                       | 默认使用 GPU 算力（需要 Nvidia 显卡），如果没显卡，可以配置该参数，改用 CPU 算力。 |
-| –medvram                       | 为低显存（比如：4G）启用模型优化，会牺牲一点速度。           |
-| –lowvram                       | 为极低显存（比如：2G）启用模型优化，会牺牲很多速度。         |
-| –autolaunch                    | 启动时自动打开浏览器访问 webui。                             |
+| –port xxx                      | 默认端口是 `7860`，如果想换个端口，可以配置该参数，例如：`--port 8888`。                                                                              |
+| –gradio-auth username:password | 如果你希望给 webui 设置登录密码，可以配置该参数，例如：`--gradio-auth GitLqr:123456`。                                                                |
+| –use-cpu                       | 默认使用 GPU 算力（需要 Nvidia 显卡），如果没显卡，可以配置该参数，改用 CPU 算力。                                                                    |
+| –medvram                       | 为低显存（比如：4G）启用模型优化，会牺牲一点速度。                                                                                                    |
+| –lowvram                       | 为极低显存（比如：2G）启用模型优化，会牺牲很多速度。                                                                                                  |
+| –autolaunch                    | 启动时自动打开浏览器访问 webui。                                                                                                                      |
 
 ```bash
 @echo off

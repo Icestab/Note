@@ -9,13 +9,13 @@ $ uname -r
 $ uname -a
 Linux localhost.localdomain 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 
-$ cat /etc/redhat-release 
+$ cat /etc/redhat-release
 CentOS Linux release 7.9.2009 (Core)
 ```
 
 ## 2、升级内核
 
-#### 更新yum源仓库
+#### 更新 yum 源仓库
 
 ```shell
 $ yum -y update
@@ -23,7 +23,7 @@ $ yum -y update
 
 #### 启用 ELRepo 仓库
 
-ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。
+ELRepo 仓库是基于社区的用于企业级 Linux 仓库，提供对 RedHat Enterprise (RHEL) 和 其他基于 RHEL 的 Linux 发行版（CentOS、Scientific、Fedora 等）的支持。
 ELRepo 聚焦于和硬件相关的软件包，包括文件系统驱动、显卡驱动、网络驱动、声卡驱动和摄像头驱动等。
 
 ```shell
@@ -43,7 +43,7 @@ yum --disablerepo="*" --enablerepo="elrepo-kernel" list available
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
  * elrepo-kernel: linux-mirrors.fnal.gov
-elrepo-kernel/primary_db                                    | 2.0 MB  00:00:02     
+elrepo-kernel/primary_db                                    | 2.0 MB  00:00:02
 可安装的软件包
 kernel-lt.x86_64                         5.4.181-1.el7.elrepo         elrepo-kernel
 kernel-lt-devel.x86_64                   5.4.181-1.el7.elrepo         elrepo-kernel
@@ -74,7 +74,7 @@ kernel-ml 主线最新版本
 
 `--enablerepo` 选项开启 CentOS 系统上的指定仓库。默认开启的是 `elrepo`，这里用 `elrepo-kernel` 替换。
 
-## 5、设置 grub2 
+## 5、设置 grub2
 
 内核安装好后，需要设置为默认启动选项并重启后才会生效
 
@@ -87,17 +87,17 @@ $ sudo awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg
 2 : CentOS Linux (0-rescue-7d2155314bbf7543a1024df4ab69de3a) 7 (Core)
 ```
 
-#### 设置新的内核为grub2的默认版本
+#### 设置新的内核为 grub2 的默认版本
 
-服务器上存在4 个内核，我们要使用 5.4 这个版本，可以通过 `grub2-set-default 0` 命令或编辑 `/etc/default/grub` 文件来设置
+服务器上存在 4 个内核，我们要使用 5.4 这个版本，可以通过 `grub2-set-default 0` 命令或编辑 `/etc/default/grub` 文件来设置
 
-#### 方法1、通过 `grub2-set-default 0` 命令设置
+#### 方法 1、通过 `grub2-set-default 0` 命令设置
 
 其中 0 是上面查询出来的可用内核
 
 `grub2-set-default 0`
 
-#### 方法2、编辑 `/etc/default/grub` 文件
+#### 方法 2、编辑 `/etc/default/grub` 文件
 
 设置 GRUB_DEFAULT=0，通过上面查询显示的编号为 0 的内核作为默认内核：
 
@@ -146,7 +146,7 @@ kernel-3.10.0-1160.el7.x86_64
 kernel-tools-3.10.0-1160.el7.x86_64
 ```
 
-#### 方法1、yum remove 删除旧内核的 RPM 包
+#### 方法 1、yum remove 删除旧内核的 RPM 包
 
 ```shell
 $ yum remove kernel-tools-libs-3.10.0-1160.el7.x86_64 \
@@ -154,14 +154,14 @@ kernel-3.10.0-1160.el7.x86_64 \
 kernel-tools-3.10.0-1160.el7.x86_64
 ```
 
-#### 方法2、yum-utils 工具
+#### 方法 2、yum-utils 工具
 
 如果安装的内核不多于 3 个，`yum-utils` 工具不会删除任何一个。只有在安装的内核大于 3 个时，才会自动删除旧内核。
 
-安装yum-utils
+安装 yum-utils
 
 `$ yum install yum-utils`
 
-删除旧版本　
+删除旧版本
 
 `package-cleanup --oldkernels`
