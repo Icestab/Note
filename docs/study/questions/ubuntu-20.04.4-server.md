@@ -1,10 +1,10 @@
-# ubuntu-20.04.4-server安装与基本配置
+# ubuntu-20.04.4-server 安装与基本配置
 
 ## 问题产生背景
 
-由于众所周知的[原因](https://blog.centos.org/2020/12/future-is-centos-stream/)，业务需要从centos迁移到其它操作系统了；本人还是觉得非常可惜，这么久以来这个系统一直是大家的首选，其实已经用习惯了
+由于众所周知的[原因](https://blog.centos.org/2020/12/future-is-centos-stream/)，业务需要从 centos 迁移到其它操作系统了；本人还是觉得非常可惜，这么久以来这个系统一直是大家的首选，其实已经用习惯了
 
-Ubuntu-server成为了本次迁移的首选，本文基于[ubuntu-20.04.4-server](https://ubuntu.com/download/server)从安装到配置进行总结
+Ubuntu-server 成为了本次迁移的首选，本文基于[ubuntu-20.04.4-server](https://ubuntu.com/download/server)从安装到配置进行总结
 
 ## 1、安装
 
@@ -20,7 +20,7 @@ Ubuntu-server成为了本次迁移的首选，本文基于[ubuntu-20.04.4-server
 
 ### 3.配置网络
 
-如果你所处的网络没有DHCP，需要静态IP；在此处键入对应值即可
+如果你所处的网络没有 DHCP，需要静态 IP；在此处键入对应值即可
 
 ![u3](./image/u3.png)
 
@@ -50,11 +50,11 @@ Ubuntu-server成为了本次迁移的首选，本文基于[ubuntu-20.04.4-server
 
 ![u7](./image/u7.png)
 
-### 8.输入Ubuntu Advantage，一般跳过
+### 8.输入 Ubuntu Advantage，一般跳过
 
 ![u8](./image/u8.png)
 
-### 9.安装OpenSSH
+### 9.安装 OpenSSH
 
 ![u9](./image/u9.png)
 
@@ -66,7 +66,7 @@ Ubuntu-server成为了本次迁移的首选，本文基于[ubuntu-20.04.4-server
 
 ![u11](./image/u11.png)
 
-### 12.出现Reboot后选择并重启
+### 12.出现 Reboot 后选择并重启
 
 ![u12](./image/u12.png)
 
@@ -78,7 +78,7 @@ Ubuntu-server成为了本次迁移的首选，本文基于[ubuntu-20.04.4-server
 
 ## 2、系统时区修改
 
-安装完后的系统默认是UTC时区，需要修改到国内
+安装完后的系统默认是 UTC 时区，需要修改到国内
 
 ### 通过命令设置：tzselect
 
@@ -98,64 +98,62 @@ Thu, 03 Mar 2022 03:25:35 +0000
 ### 复制时间文件
 
 ```shell
-ubuntu@ubuntu:~$ sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
-[sudo] password for ubuntu: 
+ubuntu@ubuntu:~$ sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+[sudo] password for ubuntu:
 ubuntu@ubuntu:~$ date -R
 Thu, 03 Mar 2022 11:27:40 +0800
 ```
 
 执行完成后时间显示正常
 
-## 3、修改DNS
+## 3、修改 DNS
 
-国内目前DNS污染严重，修改DNS可以有效解决部分网络问题
+国内目前 DNS 污染严重，修改 DNS 可以有效解决部分网络问题
 
-使用nslookup命令查看当前DNS:
+使用 nslookup 命令查看当前 DNS:
 
-```she
+```shell
 ubuntu@ubuntu:~$ nslookup qq.coom
 Server:		127.0.0.53
 Address:	127.0.0.53#53
 ```
 
-目前版本Ubuntu默认启用`systemd-resolved`DNS为127.0.0.53
+目前版本 Ubuntu 默认启用`systemd-resolved`DNS 为 127.0.0.53
 
-**首先修改 /etc/systemd/resolved.conf 文件，在其中添加dns信息，例如：**
+**首先修改 /etc/systemd/resolved.conf 文件，在其中添加 dns 信息，例如：**
 
 `DNS=8.8.8.8 114.114.114.114`
 
 然后退出保存
 
-**然后以root身份在ubuntu终端中依次执行如下命令：**
+**然后以 root 身份在 ubuntu 终端中依次执行如下命令：**
 
 ```shell
 systemctl restart systemd-resolved
 systemctl enable systemd-resolved
 ```
 
-此时新增的DNS已经增加到`systemd-resolved`中可以使用下面命令查看：
+此时新增的 DNS 已经增加到`systemd-resolved`中可以使用下面命令查看：
 
 ```shell
 $ systemd-resolve --status
 
 Global
-       LLMNR setting: no                  
-MulticastDNS setting: no                  
-  DNSOverTLS setting: no                  
-      DNSSEC setting: no                  
-    DNSSEC supported: no                  
-         DNS Servers: 8.8.8.8             
-                      114.114.114.114 
+       LLMNR setting: no
+MulticastDNS setting: no
+  DNSOverTLS setting: no
+      DNSSEC setting: no
+    DNSSEC supported: no
+         DNS Servers: 8.8.8.8
+                      114.114.114.114
 ```
 
-但是**nslookup**仍然显示127.0.0.53，使用下面命令可以强制DNS更改
+但是**nslookup**仍然显示 127.0.0.53，使用下面命令可以强制 DNS 更改
 
 ```shell
 mv /etc/resolv.conf  /etc/resolv.conf.bak
 ln -s /run/systemd/resolve/resolv.conf /etc/
 ```
-
-
 
 再查看**nslookup**:
 
@@ -173,9 +171,9 @@ Address:	114.114.114.114#53
 
 :::
 
-## 4、删除snap
+## 4、删除 snap
 
-虽然 snap 具有众多有点，但是我们是服务器不需要这些功能，而且使用 snap 还会带来额外的困扰，比如使用top查看能发现snapd常年占据较高的使用率，因此我们决定卸载 snap 服务。
+虽然 snap 具有众多有点，但是我们是服务器不需要这些功能，而且使用 snap 还会带来额外的困扰，比如使用 top 查看能发现 snapd 常年占据较高的使用率，因此我们决定卸载 snap 服务。
 
 使用如下命令卸载：
 
@@ -185,7 +183,7 @@ Address:	114.114.114.114#53
 
 ```shell
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 The following packages will be REMOVED:
   snapd* squashfs-tools*
@@ -259,4 +257,3 @@ Removing extra snap-confine apparmor rules
 Removing snapd cache
 Removing snapd state
 ```
-
