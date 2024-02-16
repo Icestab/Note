@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
@@ -28,7 +28,7 @@ jobs:
         run: bun run docs:build # 确保这里的构建命令与你的实际命令一致
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # GitHub Pages 分支
           folder: docs/.vitepress/dist # 构建输出目录，根据实际情况调整
