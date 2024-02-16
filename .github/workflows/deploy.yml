@@ -25,8 +25,7 @@ jobs:
         run: bun install
 
       - name: Build
-        run: |-
-          bun run docs:build # 确保这里的构建命令与你的实际命令一致
+        run: bun run build # 确保这里的构建命令与你的实际命令一致
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
