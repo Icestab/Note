@@ -4,7 +4,7 @@
 
 最近很多操作系统都纷纷发布了新版本，比如 [Windows 11](https://www.microsoft.com/zh-cn/windows)、[Ubuntu](https://www.ubuntu.org.cn/)、[Debian](https://www.debian.org/)、[Archlinux](https://archlinux.org/)、[FydeOS](https://fydeos.com/) 等等，对喜欢玩系统的人来说绝对是盛宴。
 
-不过一般用 [Rufus](https://rufus.ie/) 等工具，一个**U 盘**往往只能制作成一个系统的启动盘/安装盘，想要增加另一款系统，只能得重新刻录一遍，每次都要格式化超花时间。而最近发现了一款“**多合一启动盘**”的制作工具 **Ventoy**，简单到拷贝个 ISO 文件进去就能用，堪称新一代的=装机必备神器。
+不过一般用 [Rufus](https://rufus.ie/) 等工具，一个**U 盘**往往只能制作成一个系统的启动盘/安装盘，想要增加另一款系统，只能得重新刻录一遍，每次都要格式化超花时间。而最近发现了一款“**多合一启动盘**”的制作工具 **Ventoy**，简单到拷贝个 ISO 文件进去就能用，堪称新一代的装机必备神器。
 
 ## 介绍：
 
@@ -18,7 +18,7 @@
 
 ## 制作启动盘教程:
 
-Ventoy 提供了 Windows 和 Linux 两大平台版本的制作工具，这里以 Windows 为例子。先下载 [Ventoy]([Download . Ventoy](https://www.ventoy.net/cn/download.html)) 的安装包解压，获得 `Ventoy2Disk.exe` 文件。双击启动它，就能打开 Ventoy 的制作器界面了， 如图所示。
+Ventoy 提供了 Windows 和 Linux 两大平台版本的制作工具，这里以 Windows 为例子。先下载 [Ventoy](https://www.ventoy.net/cn/download.html) 的安装包解压，获得 `Ventoy2Disk.exe` 文件。双击启动它，就能打开 Ventoy 的制作器界面了， 如图所示。
 
 ![v1](./v1.png)
 

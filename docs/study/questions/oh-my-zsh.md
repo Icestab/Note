@@ -119,7 +119,7 @@ https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh
 
 ### 2.插件
 
-ohmyzsh 强大的地方就强大在其有丰富的插件，但是我个人推荐的插件不多 6 个，其中 4 个是自带的 2 个需要自己安装（`https://github.com/zsh-users`上有各种插件可以自行选择）
+ohmyzsh 强大的地方就强大在其有丰富的插件，但是我个人推荐的插件不多 7 个，其中 4 个是自带的 2 个需要自己安装（`https://github.com/zsh-users`上有各种插件可以自行选择）
 
 ```shell
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting

@@ -25,7 +25,7 @@
 | 软件名称      | 介绍                                                                                                              | 下载地址                                    |
 | --------- |:---------------------------------------------------------------------------------------------------------------:|:---------------------------------------:|
 | Windows10 | Windows 10，是由微软公司（Microsoft）开发的操作系统，应用于计算机和平板电脑等设备。点击后复制链接使用第三方下载工具下载！                                          | [点击查看](./Software.md#windows10)         |
-| Windwos11 | Windows 11 是由微软公司（Microsoft）开发的操作系统，应用于计算机和平板电脑等设备 。于 2021 年 6 月 24 日发布 ，2021 年 10 月 5 日发行 。点击后复制链接使用第三方下载工具下载！ | [点击查看](./Software.md#windows11)         |
+| Windows11 | Windows 11 是由微软公司（Microsoft）开发的操作系统，应用于计算机和平板电脑等设备 。于 2021 年 6 月 24 日发布 ，2021 年 10 月 5 日发行 。点击后复制链接使用第三方下载工具下载！ | [点击查看](./Software.md#windows11)         |
 | MicroKMS  | 目前 MicroKMS 神龙版能激活 win10、win8/8.1、win7 以及 server2008/2012/2016/2019 等系统版本，同时支持激活 office 。                       | http://www.yishimei.cn/network/319.html |
 | 微 pe      | 个人使用所有 pe 中最干净的一款，推荐使用！                                                                                         | https://www.wepe.com.cn/download.html   |
 | GEEK      | 有时电脑遇到软件无法卸载，软件残留注册表影响软件安装。软件繁多，难于统一管理？Geek Uninstaller 都可以解决。                                                  | https://geekuninstaller.com/download    |

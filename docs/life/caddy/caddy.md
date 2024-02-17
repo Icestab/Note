@@ -1,6 +1,6 @@
 # 使用 _caddy_ 自建 _WebDAV_ 服务器
 
-[Caddy Web 服务器](https://www.wbolt.com/go?_=0e121e780baHR0cHM6Ly9jYWRkeXNlcnZlci5jb20v)是一个开源的、支持 HTTP/2 的 Web 服务器，用 Go 编写，该服务器被设计为简单、高效和便携。Caddy 自称是“终极服务器”，旨在让网络托管“尽可能简单”。
+[Caddy Web 服务器](https://caddyserver.com/)是一个开源的、支持 HTTP/2 的 Web 服务器，用 Go 编写，该服务器被设计为简单、高效和便携。Caddy 自称是“终极服务器”，旨在让网络托管“尽可能简单”。
 
 ## 前言
 
