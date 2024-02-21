@@ -75,6 +75,7 @@ export default defineConfig({
           { text: 'SSH防止暴力破解', link: '/study/questions/ssh' },
           { text: 'Centos7 升级内核版本', link: '/study/questions/centos7' },
           { text: 'oh-my-zsh安装与基本配置', link: '/study/questions/oh-my-zsh' },
+          { text: 'Fish Shell的安装与基本配置', link: '/study/questions/fish' },
           {
             text: 'ubuntu-20.04.4-server安装与基本配置',
             link: '/study/questions/ubuntu-20.04.4-server'
