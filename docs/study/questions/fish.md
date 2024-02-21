@@ -6,7 +6,6 @@ Fish Shell 是一款智能且用户友好的命令行界面，适用于 Linux、
 
 之前一直使用`oh-my-zsh`，这个项目还是很棒的，不过这个项目越来越庞大导致现在启动有点慢了。我在网上看到有人也推荐`zim`，不过我去了解一下还是放弃了，这个项目目前名叫[zimfw](https://github.com/zimfw/zimfw)不过是个新开的项目，因为之前的项目删库了。有点担心新项目未来也删库，索性直接用上已经被安利了很久的 FISH。
 
----
 
 ## 安装 Fish Shell
 
@@ -55,7 +54,6 @@ ubuntu% echo $SHELL
 
 ## Fisher 安装
 
----
 
 [Fisher](https://github.com/jorgebucaran/fisher) 是一个 Fish Shell 的包管理器，用于安装和管理第三方软件包。
 
