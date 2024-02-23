@@ -6,7 +6,6 @@ Fish Shell 是一款智能且用户友好的命令行界面，适用于 Linux、
 
 之前一直使用`oh-my-zsh`，这个项目还是很棒的，不过这个项目越来越庞大导致现在启动有点慢了。我在网上看到有人也推荐`zim`，不过我去了解一下还是放弃了，这个项目目前名叫[zimfw](https://github.com/zimfw/zimfw)不过是个新开的项目，因为之前的项目删库了。有点担心新项目未来也删库，索性直接用上已经被安利了很久的 FISH。
 
-
 ## 安装 Fish Shell
 
 1. **Ubuntu/Debian**：
@@ -51,9 +50,10 @@ ubuntu% echo $SHELL
 表明已经将 zsh 设置为默认 shell
 
 :::
+可视化配置：`fish_config`
+![f1](./image/f1.webp)
 
 ## Fisher 安装
-
 
 [Fisher](https://github.com/jorgebucaran/fisher) 是一个 Fish Shell 的包管理器，用于安装和管理第三方软件包。
 
@@ -65,7 +65,7 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 ### 插件推荐
 
-由于 fish 自带了很多功能，属于开箱即用的状态所以也没啥推荐的，不过因为我习惯了 Z 插件，同时需要 nodejs 环境，所以安装了这两个。
+由于 fish 自带了很多功能，属于开箱即用的状态所以也没啥推荐的（自动建议、语法高亮都自带了，其中 sudo 键位为`ALT+s`），不过因为我习惯了 Z 插件，同时需要 nodejs 环境，所以安装了这两个。
 
 - nvm:`fisher install jorgebucaran/nvm.fish`
 
