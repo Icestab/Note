@@ -49,7 +49,8 @@ export default defineConfig({
           { text: 'Netflix UWP Windows客户端除网络隔离的方法', link: '/life/netflix' },
           { text: 'Ventoy 安装教程', link: '/life/ventoy/ventoy' },
           { text: 'AI - stable-diffusion(AI绘画)的搭建与使用', link: '/life/sdweb/sdweb' },
-          { text: '使用 caddy 自建 WebDAV 服务器', link: '/life/caddy/caddy' }
+          { text: '使用 caddy 自建 WebDAV 服务器', link: '/life/caddy/caddy' },
+          { text: '玩客云刷 armbian 并安装 homeassistant', link: 'life/oc/oc' }
         ]
       },
       {
@@ -95,7 +96,7 @@ export default defineConfig({
     returnToTopLabel: '返回顶部',
     darkModeSwitchLabel: '主题',
     sidebarMenuLabel: '目录',
-    outlineTitle: '此页',
+    outlineTitle: '页面导航',
     outline: 'deep'
   },
   markdown: {
