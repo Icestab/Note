@@ -203,3 +203,30 @@ docker-compose stop
 ### 4. 访问 Home Assistant 的 Web 界面
 
 Home Assistant 容器启动后，可以通过浏览器访问`http://<Docker 主机 IP>:8123`来访问 Home Assistant 的 Web 界面。
+
+**安装 hacs**
+
+> HACS（Home Assistant Community Store）是一个用于 Home Assistant 的第三方集成管理器，它允许用户轻松发现、安装和管理自定义集成和插件。以下是安装 HACS 的基本步骤：
+
+1. 获取 HACS 安装文件
+   访问 HACS 官方网站 或 HACS GitHub 仓库 获取最新的安装文件。
+2. 将 HACS 文件解压到 Home Assistant 配置目录
+   将下载的 HACS 文件解压缩。
+   把 hacs 文件夹放入你的 Home Assistant 配置目录下的 custom_components 文件夹中。如果 custom_components 文件夹不存在，你需要手动创建它。
+3. 重启 Home Assistant
+   在对配置文件进行更改后，你需要重启 Home Assistant 以加载新的集成。
+4. 在 Home Assistant 中配置 HACS
+   重启 Home Assistant 后，进入配置 -> 集成页面。
+   点击右下角的“添加集成”按钮，搜索并选择 HACS。
+   按照提示完成 HACS 的安装和配置。
+5. 获取 GitHub 个人访问令牌（如果需要）
+   在某些情况下，HACS 需要一个 GitHub 个人访问令牌以访问 GitHub API。你可以在 GitHub 设置页面 生成一个新的令牌。
+   在生成令牌时，你不需要选择任何特定的作用域，直接生成即可。
+   在 HACS 配置过程中，如果被要求提供，就输入这个令牌。
+
+另外也可以访问(https://hacs.xyz/docs/setup/download)查看官方安装方法。
+:::tip 提示
+如果你的插件不多，比如我就安装两个，且访问 github 网络环境不是特别友好，其实没有必要安装 HACS，可以去插件页面手动下载安装。
+:::
+通过 HACS 上面安装 xiaomi-miot 或者访问(https://github.com/al-one/hass-xiaomi-miot)下载后解压到`custom_components`目录下。
+登录小米账号后即可自动获取设备开始你的 home assistant 之旅。
