@@ -32,19 +32,19 @@ Vaultwarden 是一个轻量级的 Bitwarden 服务器 API 实现，它用 Rust �
 
 1. **安装 Docker**：确保你的系统中安装了 Docker。可以访问 Docker 的官方文档来查找适合你操作系统的安装指南或者[玩客云刷 armbian 并安装 homeassistant](./oc/oc)这篇文件也提及了如何安装 docker。
 2. **拉取 Vaultwarden 镜像**：在终端运行以下命令来拉取最新版本的 Vaultwarden Docker 镜像：
-   ```shell
+   ```sh
    docker pull vaultwarden/server:latest
    ```
 3. **启动容器**：使用以下命令启动 Vaultwarden 容器：
 
-   ```shell
+   ```sh
    docker run -d --name vaultwarden -v /vw-data/:/data/ -p 80:80 vaultwarden/server
    ```
 
    这里`/vw-data/`是你想在主机上用于存储 Vaultwarden 数据的路径，`80:80`是端口映射配置，将容器的 80 端口映射到主机的 80 端口。
 
 4. **docker-compose 部署**：如果你更喜欢使用 docker-compose 来进行部署，可以参考 Vaultwarden 的[官方文档](https://github.com/dani-garcia/vaultwarden/wiki/Using-Docker-Compose),这篇文章详细提供包括 Caddy 在内的配置文件。如果你像我一样已经有了一个具备 HTTPS 的 Caddy 服务器，你只需要在`docker-compose.yml`中添加`vaultwarden`服务：
-   ```shell
+   ```yaml
    version: '3.8'
    services:
    vaultwarden:
@@ -70,7 +70,7 @@ Vaultwarden 是一个轻量级的 Bitwarden 服务器 API 实现，它用 Rust �
 
 下面提供一个官网的 caddy 例子：
 
-```shell
+```caddyfile
 
 # Uncomment this in addition with the import admin_redir statement allow access to the admin interface only from local networks
 # (admin_redir) {
@@ -142,9 +142,9 @@ Vaultwarden 是一个轻量级的 Bitwarden 服务器 API 实现，它用 Rust �
 
 在这个例子中提供的配置方法和禁止外网访问的方法。如果需要，可以参考 Caddy 官方文档以获取更多信息。
 
-提供一个另外的思路来禁止通过 caddy 访问 vaultwarden,这样的话你就可以直接通过 ip 地址访问 vaultwarden 的 admin。
+提供一个另外的思路来禁止通过 caddy 访问 vaultwarden,这样的话你只能通过内网 ip 地址访问 vaultwarden 的 admin。
 
-```shell
+```caddyflie
 
 example.com {
     @notAdmin not path /admin*
@@ -164,7 +164,7 @@ example.com {
 - **启用 HTTPS**：强烈建议通过反向代理启用 HTTPS，以确保数据传输过程中的加密。
 - **定期更新**：定期更新 Docker 镜像或 Vaultwarden 本身，以确保安全漏洞得到修复。
 - **备份数据**：定期备份`/vw-data/`目录（对于 Docker 部署），以防数据丢失。
-- **禁止外网访问**：如果 Vaultwarden 部署在公网上，请确保只允许内部网络访问。
+- **禁止外网访问**：如果 Vaultwarden 部署在公网上，请确保只允许内部网络访问admin。
 
 ## 结语
 
