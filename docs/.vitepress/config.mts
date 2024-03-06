@@ -50,7 +50,8 @@ export default defineConfig({
           { text: 'Ventoy 安装教程', link: '/life/ventoy/ventoy' },
           { text: 'AI - stable-diffusion(AI绘画)的搭建与使用', link: '/life/sdweb/sdweb' },
           { text: '使用 caddy 自建 WebDAV 服务器', link: '/life/caddy/caddy' },
-          { text: '玩客云刷 armbian 并安装 homeassistant', link: 'life/oc/oc' }
+          { text: '玩客云刷 armbian 并安装 homeassistant', link: 'life/oc/oc' },
+          { text: '本地化部署 vaultwarden 密码管理工具', link: '/life/vaultwarden' }
         ]
       },
       {
