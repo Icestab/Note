@@ -98,7 +98,11 @@ export default defineConfig({
     darkModeSwitchLabel: '主题',
     sidebarMenuLabel: '目录',
     outlineTitle: '页面导航',
-    outline: 'deep'
+    outline: 'deep',
+    editLink: {
+      pattern: 'https://github.com/Icestab/Note/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页面'
+    }
   },
   markdown: {
     lineNumbers: true
