@@ -48,18 +48,18 @@ Vaultwarden 是一个轻量级的 Bitwarden 服务器 API 实现，它用 Rust �
    version: '3.8'
    services:
    vaultwarden:
-    image: vaultwarden/server:latest
-    container_name: vaultwarden
-    network_mode: bridge #使用默认的桥接网络
-    restart: always
-    environment:
-      TZ: "Asia/Shanghai"
-      ADMIN_TOKEN: "xxxxxx" #设置管理员token
-      SIGNUPS_VERIFY: "true" #允许注册，一般在第一次注册之后关闭
-    volumes:
-      - "./data:/data" #在docker-compose.yml同级目录创建的文件夹
-    ports:
-      - "8888:80"#映射80端口
+     image: vaultwarden/server:latest
+     container_name: vaultwarden
+     network_mode: bridge #使用默认的桥接网络
+     restart: always
+     environment:
+       TZ: 'Asia/Shanghai'
+       ADMIN_TOKEN: 'xxxxxx' #设置管理员token
+       SIGNUPS_VERIFY: 'true' #允许注册，一般在第一次注册之后关闭
+     volumes:
+       - './data:/data' #在docker-compose.yml同级目录创建的文件夹
+     ports:
+       - '8888:80' #映射80端口
    ```
    你在其他地方可能会看到关于 websocket 的配置，我这里没有配置，因为翻阅官方文档后发现，Vaultwarden 默认已经支持 websocket，所以无需额外配置。
 
@@ -70,7 +70,7 @@ Vaultwarden 是一个轻量级的 Bitwarden 服务器 API 实现，它用 Rust �
 
 下面提供一个官网的 caddy 例子：
 
-```caddyfile
+```
 
 # Uncomment this in addition with the import admin_redir statement allow access to the admin interface only from local networks
 # (admin_redir) {
@@ -144,7 +144,7 @@ Vaultwarden 是一个轻量级的 Bitwarden 服务器 API 实现，它用 Rust �
 
 提供一个另外的思路来禁止通过 caddy 访问 vaultwarden,这样的话你只能通过内网 ip 地址访问 vaultwarden 的 admin。
 
-```caddyflie
+```
 
 example.com {
     @notAdmin not path /admin*
@@ -164,7 +164,7 @@ example.com {
 - **启用 HTTPS**：强烈建议通过反向代理启用 HTTPS，以确保数据传输过程中的加密。
 - **定期更新**：定期更新 Docker 镜像或 Vaultwarden 本身，以确保安全漏洞得到修复。
 - **备份数据**：定期备份`/vw-data/`目录（对于 Docker 部署），以防数据丢失。
-- **禁止外网访问**：如果 Vaultwarden 部署在公网上，请确保只允许内部网络访问admin。
+- **禁止外网访问**：如果 Vaultwarden 部署在公网上，请确保只允许内部网络访问 admin。
 
 ## 结语
 

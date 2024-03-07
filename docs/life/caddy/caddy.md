@@ -14,7 +14,7 @@
 
 **拉取 docker 镜像**：
 
-```shell
+```sh
 #docker pull caddy
 Using default tag: latest
 latest: Pulling from library/caddy
@@ -29,7 +29,7 @@ docker.io/library/caddy:latest
 
 **创建一个文件夹用于存放配置文件和 WebDAV 同步数据用**
 
-```shell
+```sh
 #mkdir caddy
 #cd caddy/
 #mkdir config
@@ -40,7 +40,7 @@ docker.io/library/caddy:latest
 
 **启动容器：**
 
-```shell
+```sh
 docker run -d -p 9000:80 --name caddy caddy
 ```
 
@@ -74,7 +74,7 @@ docker run -d -p 9000:80 --name caddy caddy
 
 在/caddy/config 新建配置文件**Caddyfile**
 
-```yaml
+```
 # The Caddyfile is an easy way to configure your Caddy web server.
 #
 # Unless the file starts with a global options block, the first
@@ -114,7 +114,7 @@ docker run -d -p 9000:80 --name caddy caddy
 
 再次启动容器：
 
-```shell
+```sh
 docker run -d -p 9000:80 \
  	-v /caddy/config:/etc/caddy \
  	-v /caddy/data:/data \
@@ -144,7 +144,7 @@ exit
 
 将 webdav 配置的注释取消：
 
-```yaml
+```
 # The Caddyfile is an easy way to configure your Caddy web server.
 #
 # Unless the file starts with a global options block, the first
@@ -193,7 +193,7 @@ exit
 
 caddy 配置不接受明文密码，可以在容器里使用下面命令进行对密码进行加密：实验账号：test 密码：123456
 
-```shell
+```sh
 /srv # caddy hash-password
 Enter password:
 Confirm password:
@@ -202,7 +202,7 @@ $2a$14$zaOIqilDucUJ7AYG51fPP.mcFoPC4.kVJ3SzysjiIqAlceP/Hc0E2
 
 修改配置：
 
-```yaml
+```
 # The Caddyfile is an easy way to configure your Caddy web server.
 #
 # Unless the file starts with a global options block, the first
@@ -246,8 +246,51 @@ $2a$14$zaOIqilDucUJ7AYG51fPP.mcFoPC4.kVJ3SzysjiIqAlceP/Hc0E2
 
 再次访问网页，如果出现用户名密码框就部署成功。
 
-4、待续（HTTPS）
+## 4、HTTPS
 
 WebDAV 一般都需要端口映射到公网，并且为了稳定使用你一般需要域名加 DDNS 的方式。所以将目前的 HTTP 方式切换为 HTTPS 能够有效的保护自己的文件。
 
-后面有时间再更新。
+Caddy 是一个自动化管理 TLS 证书的 web 服务器，它使得启用 HTTPS 变得非常简单。默认情况下，当你在 Caddyfile 中指定一个使用 HTTPS 的网站时(Caddyfile 中的“:80”替换为你的域名)，Caddy 会自动为该网站获取和续订 TLS 证书；不过这需要你的服务器能够访问 80 和 443 端口，而家庭网络环境里是没有这个条件的。
+
+直接前往你的域名购买商，申请一个免费的证书，然后按照下面配置配置即可：
+
+```
+# The Caddyfile is an easy way to configure your Caddy web server.
+#
+# Unless the file starts with a global options block, the first
+# uncommented line is always the address of your site.
+#
+# To use your own domain name (with automatic HTTPS), first make
+# sure your domain's A/AAAA DNS records are properly pointed to
+# this machine's public IP, then replace ":80" below with your
+# domain name.
+
+yourdomain.com:8080 {
+	# Set this path to your site's directory.
+	root * /data/dav
+	encode gzip
+	# hide or remove certain response headers in Caddy
+    header / -Server
+	# Enable the static file server.
+	route {
+		rewrite /dav /dav/
+		webdav /dav/* {
+        	prefix /dav
+    	}
+        file_server browse
+
+    }
+    basicauth {
+    	test $2a$14$zaOIqilDucUJ7AYG51fPP.mcFoPC4.kVJ3SzysjiIqAlceP/Hc0E2
+    }
+	tls {$SSL_CERT_PATH} {$SSL_KEY_PATH} // [!code highlight]
+	# Another common task is to set up a reverse proxy:
+	# reverse_proxy localhost:8080
+
+	# Or serve a PHP site through php-fpm:
+	# php_fastcgi localhost:9000
+}
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile
+```
