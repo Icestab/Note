@@ -67,6 +67,32 @@ echo 1 > /sys/class/leds/onecloud:blue:alive/brightness
 echo 0 > /sys/class/leds/onecloud:green:alive/brightness
 ```
 
+### 5.查看 eMMC 健康度
+
+首先安装 `mmc-utils`
+
+> 如果系统没有默认安装的话
+
+`sudo apt install mmc-utils`
+
+查看 mmcblk0 的寿命，这里假定设备名为 mmcblk0，实际设备名使用 lsblk 命令很容易确定
+
+`sudo mmc extcsd read /dev/mmcblk0`
+
+过滤一下，只看寿命相关信息
+
+```sh
+sudo mmc extcsd read /dev/mmcblk0 | grep Life
+eMMC Life Time Estimation A [EXT_CSD_DEVICE_LIFE_TIME_EST_TYP_A]: 0x01
+eMMC Life Time Estimation B [EXT_CSD_DEVICE_LIFE_TIME_EST_TYP_B]: 0x03
+```
+
+越靠近 0 约好，0x01 表示 0-10%之间，0x0A 表示 90%-100%之间，0x0B 就表示完蛋了。
+
+可以参考下面图片：
+![./oc3.png](oc3.png)
+![./oc4.png](oc4.png)
+
 ## 三、安装 docker
 
 使用 Docker 安装 Home Assistant 的原因包括：
