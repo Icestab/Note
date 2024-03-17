@@ -53,6 +53,12 @@ ubuntu% echo $SHELL
 可视化配置：`fish_config`
 ![f1](./image/f1.webp)
 
+::: tip 提示
+
+如果是连接的远程服务器可能无法打开，这个时候可以在本地配置好后把`prompt`复制到远程服务器上
+`~/.config/fish/functions/fish_prompt.fish`
+:::
+
 ## Fisher 安装
 
 [Fisher](https://github.com/jorgebucaran/fisher) 是一个 Fish Shell 的包管理器，用于安装和管理第三方软件包。
@@ -60,7 +66,7 @@ ubuntu% echo $SHELL
 > A plugin manager for [Fish](https://fishshell.com/)—your friendly interactive shell. [Snag fresh plugins!](https://github.com/jorgebucaran/awsm.fish#readme)
 
 ```shell
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
 ### 插件推荐
