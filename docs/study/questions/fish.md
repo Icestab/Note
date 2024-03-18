@@ -42,7 +42,7 @@ reboot
 
 查看系统当前使用的 shell
 
-```shell
+```fish
 ubuntu% echo $SHELL
 /usr/bin/fish
 ```
@@ -59,13 +59,38 @@ ubuntu% echo $SHELL
 `~/.config/fish/functions/fish_prompt.fish`
 :::
 
+5. **个性化**
+
+配置 nano 的 tab 为现在更常见的 4 空格
+
+```fish
+nano ~/.nanorc
+
+# .nanorc
+set tabsize 4
+```
+
+配置 alias 在 Fish shell 中，你可以通过创建一个名为 rm 的函数来模拟 rm -i 的行为。这样，每次你运行 rm 时，它都会以交互模式运行，提示你确认是否真的要删除文件。
+
+```fish
+nano ~/.config/fish/config.fish
+
+# .config/fish/config.fish
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    function rm
+        command rm -i $argv
+    end
+end
+```
+
 ## Fisher 安装
 
 [Fisher](https://github.com/jorgebucaran/fisher) 是一个 Fish Shell 的包管理器，用于安装和管理第三方软件包。
 
 > A plugin manager for [Fish](https://fishshell.com/)—your friendly interactive shell. [Snag fresh plugins!](https://github.com/jorgebucaran/awsm.fish#readme)
 
-```shell
+```fish
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
