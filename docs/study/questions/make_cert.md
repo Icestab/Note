@@ -178,10 +178,6 @@ DNS.3 = test.com
 DNS.4 = *.test.com
 ```
 
-::: tip 提示
-如果安卓无法导入提示需要私钥，那么把`basicConstraints=CA:FALSE`改为 TRUE，让 ssl 证书成为 CA 证书。
-:::
-
 当前目录的文件
 
 ```
@@ -284,3 +280,35 @@ Certificate:
 root@ubuntu:/home/liuguang/certs# openssl verify -CAfile ../ca/myCA.crt localhost.crt
 localhost.crt: OK
 ```
+
+## 快速生成证书
+
+新建文件`sh.sh`输入如下内容保存
+
+```sh
+#!/bin/bash
+
+openssl req -new -newkey rsa:2048 -sha256 -nodes -out ip.csr -keyout ip.key -subj "/C=CN/ST=Beijing/L=Beijing/O=Super Inc./OU=Web Security/CN=ip"
+
+openssl x509 -req -days 365 -in ip.csr -signkey ip.key -out ip.crt -extfile http.ext
+```
+
+新建文件`cert.ext`输入如下内容保存
+
+```ini
+basicConstraints=CA:TRUE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth, clientAuth
+subjectAltName=@SubjectAlternativeName
+
+[ SubjectAlternativeName ]
+IP.1=127.0.0.1
+IP.2=ip
+```
+
+:::tip 提示
+`basicConstraints=CA:TRUE`在上面的例子中，`basicConstraints` 字段被设置为 `CA:TRUE`，这意味着该证书是自签名的，并且可以被用作 CA。
+这么做是因为安卓无法导入，所以需要将自签名的证书转换为 CA 证书。
+:::
+
+把 ip 换成对应的内网 ip 即可，`sh sh.sh`即可生成证书
