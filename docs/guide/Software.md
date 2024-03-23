@@ -11,6 +11,7 @@
 | Office2019 |                                                                                         Microsoft Office 是由 Microsoft(微软)公司开发的一套基于 Windows 操作系统的办公软件套装。点击后复制链接使用第三方下载工具下载！                                                                                         |             [点击查看](./Software.md#office2019)              |
 | 360 压缩   |                                                                                                        360 唯一一款良性软件，360 压缩是 360 推出的免费解压缩软件,360 压缩快速轻巧、兼容性好、永久免费。                                                                                                        |                     https://yasuo.360.cn/                     |
 | Typedown   | Typedown 是一款专为 Windows 11 平台设计的轻量级 Markdown 编辑器。无预览窗口、无各种标记、所见即所得，支持 LaTeX 公式编辑、流程图绘制和支持多种语言代码高亮。借助 WinUI 框架，它为用户提供了与操作系统完美匹配的界面和高效的编辑体验。无论您是撰写技术文档、学术论文还是博客文章，Typedown 都将是您的得力助手！ | https://apps.microsoft.com/detail/9P8TCW4H2HB4?hl=zh-cn&gl=CN |
+| NDM        |                                                                                          Neat Download Manager is a free Internet Download Manager for macOS (OS X 10.10 or higher) and Windows (Windows 7 or higher)                                                                                          |       https://www.neatdownloadmanager.com/index.php/en/       |
 
 ## 开发工具
 
