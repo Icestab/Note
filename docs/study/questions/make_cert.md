@@ -10,6 +10,15 @@ cd ca
 openssl genrsa -des3 -out myCA.key 2048
 ```
 
+::: tip 提示
+为了更好的安全性，建议使用 4096 位，`des3`加密换成`aes256`；在更现代的加密中使用`ECDSA`和`ED25519`也是不错的选择，命令如下：
+
+```shell
+openssl genpkey -aes256 -algorithm ed25519 -out myCA.key
+```
+
+:::
+
 生成如下
 
 ```
