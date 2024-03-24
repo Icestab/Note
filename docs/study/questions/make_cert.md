@@ -11,10 +11,13 @@ openssl genrsa -des3 -out myCA.key 2048
 ```
 
 ::: tip 提示
-为了更好的安全性，建议使用 4096 位，`des3`加密换成`aes256`；在更现代的加密中使用`ECDSA`和`ED25519`也是不错的选择，命令如下：
+为了更好的安全性，建议使用 4096 位，`des3`加密换成`aes256`；在更现代的加密中使用`ECDSA`和 ~~`ED25519`~~ 也是不错的选择，命令如下：
 
 ```shell
+# 实测目前浏览器不支持 ed25519 证书，所以不建议使用
 openssl genpkey -aes256 -algorithm ed25519 -out myCA.key
+# 实测目前浏览器支持 ecdsa 证书，所以建议使用
+openssl genpkey -aes256 -algorithm EC -pkeyopt ec_paramgen_curve:prime256v1 -out myCA.key
 ```
 
 :::
