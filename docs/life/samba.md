@@ -86,7 +86,7 @@ sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.backup
 
 在配置文件中，找到以下部分并进行修改：
 
-```conf
+```ini
 [global]
     workgroup = WORKGROUP
     log file = /var/log/samba/log.%m
