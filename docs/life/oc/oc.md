@@ -113,7 +113,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh ./get-docker.sh
 ```
 
-或者添加docker源然后通过apt安装，这么操作有利于后期管理：
+或者添加 docker 源然后通过 apt 安装，这么操作有利于后期管理：
 
 ```sh
 # Add Docker's official GPG key:
@@ -129,6 +129,7 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 ```
 
