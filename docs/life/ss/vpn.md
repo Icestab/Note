@@ -83,6 +83,8 @@ systemctl start shadowsocks
 
 修改完成后`systemctl restart shadowsocks-libev.service`即可生效。
 
+目前 CentOS 已经停止更新，推荐使用 Debian、Ubuntu 等 Linux 发行版，脚本不支持这些发行版，请参考[Debian 配置 shadowsocks-libev](./ss)
+
 :::
 
 目前有 Go 语言的版本，有兴趣朋友可以自行研究。
