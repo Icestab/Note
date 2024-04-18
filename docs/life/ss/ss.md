@@ -17,7 +17,7 @@ nohup ss-server -s 0.0.0.0 -p 65534 -l 8388 -k 123456 -m chacha20-ietf-poly1305 
 
 **手动安装**
 
-### 1、Ubuntu 下直接 apt 安装，注意权限不够则命令前加 sudo：
+### 1、Debian 下直接 apt 安装，注意权限不够则命令前加 sudo：
 
 ```sh
 apt install shadowsocks-libev
