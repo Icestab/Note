@@ -93,6 +93,108 @@ eMMC Life Time Estimation B [EXT_CSD_DEVICE_LIFE_TIME_EST_TYP_B]: 0x03
 ![./oc3.png](oc3.png)
 ![./oc4.png](oc4.png)
 
+### 6.固定 ip
+
+可以使用路由器直接固定 ip，但是有时候需要修改网关等设置还是需要配置一下：
+
+```sh
+# 修改网络配置
+sudo nano /etc/network/interfaces
+
+# 添加以下内容
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 192.168.1.100
+netmask 255.255.255.0
+gateway 192.168.1.1
+dns-nameservers 114.114.114.114
+```
+
+此项配置可能不会生效，因为目前 ARMBIAN 默认使用 NetworkManager 管理网络：
+
+使用 `nmcli` 设置静态 IP 地址，你需要执行以下步骤：
+
+**1. 确定网卡名称:**
+
+使用以下命令列出所有网络接口：
+
+```bash
+nmcli device status
+```
+
+找到你想要设置静态 IP 的网卡名称，例如 `eth0` 或 `wlan0`。
+
+**2. 修改网络连接配置:**
+
+使用以下命令修改网络连接配置，将 `<网卡名称>` 替换为你的网卡名称：
+
+```bash
+nmcli connection edit <网卡名称>
+```
+
+这将打开一个交互式编辑器。
+
+**3. 设置 IPv4 配置:**
+
+在编辑器中，输入以下命令设置 IPv4 地址、网关和 DNS 服务器：
+
+```
+set ipv4.method manual
+set ipv4.addresses <IP地址>/<子网掩码>
+set ipv4.gateway <网关地址>
+set ipv4.dns <DNS服务器地址>
+```
+
+例如，如果你的 IP 地址是 `192.168.1.100`，子网掩码是 `24`，网关是 `192.168.1.1`，DNS 服务器是 `8.8.8.8`，则输入以下命令：
+
+```
+set ipv4.method manual
+set ipv4.addresses 192.168.1.100/24
+set ipv4.gateway 192.168.1.1
+set ipv4.dns 8.8.8.8
+```
+
+**可选：** 你还可以设置多个 DNS 服务器，使用空格分隔：
+
+```
+set ipv4.dns "8.8.8.8 8.8.4.4"
+```
+
+**4. 保存并应用更改:**
+
+输入以下命令保存更改并退出编辑器：
+
+```
+save
+quit
+```
+
+**5. 重新启动网络服务:**
+
+使用以下命令重新启动网络服务，使更改生效：
+
+```bash
+nmcli connection down <网卡名称>
+nmcli connection up <网卡名称>
+```
+
+可以不执行 down 避免 ssh 掉线，当然你也可以直接重启系统。
+
+有时你可能需要关闭 ipv6：
+
+`nmcli c modify "Wired connection 1" ipv6.method disabled`
+
+**注意:**
+
+- 以上步骤假设你使用的是 NetworkManager 管理网络连接。
+- 确保你输入的 IP 地址、网关和 DNS 服务器地址正确无误。
+- 如果你使用的是 DHCP 自动获取 IP 地址，则将 `ipv4.method` 设置为 `auto`。
+
+希望这些步骤能够帮助你使用 `nmcli` 设置静态 IP 地址。
+
 ## 三、安装 docker
 
 使用 Docker 安装 Home Assistant 的原因包括：
