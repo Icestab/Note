@@ -86,7 +86,11 @@ export default defineConfig({
             text: 'ubuntu-20.04.4-server安装与基本配置',
             link: '/study/questions/ubuntu-20.04.4-server'
           },
-          { text: '自签名 ssl 证书生成', link: '/study/questions/make_cert' }
+          { text: '自签名 ssl 证书生成', link: '/study/questions/make_cert' },
+          {
+            text: 'Linux 利用rsync实现全自动备份',
+            link: '/study/questions/docker_backup'
+          }
         ]
       }
     ],
