@@ -24,6 +24,8 @@ echo '今天星期'$WEEK_DAY
 if [ $WEEK_DAY -eq 0 ];then
 　　# 如果是周日，就全量更新，所谓全量备份就是把之前增量备份的文件夹名字换掉
 　　echo "今天是周天，全量备份"
+　　# 使用tar命令打包，打包后压缩,配合(https://github.com/Icestab/BackupToCos)使用
+　　# tar -zcf /mnt/data/docker/cos/data/backup.tar.gz /mnt/data/docker/pgback/postgis
 　　# 旧的备份目录名称拼接上时间
 　　filename=pgback_$(date +%Y%m%d)
 　　# 修改旧的备份目录名称为filename
@@ -95,3 +97,5 @@ ps：日志文件的名称最好拼接上时间，方便查看`日志文件绝�
 以上脚本只是备份了 Docker 容器的数据，如果需要备份其他数据，只需要修改脚本中的数据源和备份目录即可。
 
 同时备份数据应该放在另外的磁盘上，防止数据丢失。如果必要可以同时将备份的数据上传到云存储，如阿里云 OSS、腾讯云 COS 等，以便在需要时恢复数据。
+
+使用[BackupToCos](https://github.com/Icestab/BackupToCos)并将脚本的`tar`注释取消即可实现备份，如果需要每天备份，把`tar`命令移动到`if`语句外即可。
