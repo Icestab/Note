@@ -63,6 +63,12 @@ Vaultwarden 是一个轻量级的 Bitwarden 服务器 API 实现，它用 Rust �
    ```
    你在其他地方可能会看到关于 websocket 的配置，我这里没有配置，因为翻阅官方文档后发现，Vaultwarden 默认已经支持 websocket，所以无需额外配置。
 
+:::tip
+避免管理员密码泄露，建议加密密码：`docker run --rm -it vaultwarden/server /vaultwarden hash`
+
+执行命令后，会返回一个加密后的管理员密码，将其复制并使用`ADMIN_TOKEN`环境变量设置即可。
+:::
+
 ### 3. 配置
 
 - **环境变量**：Vaultwarden 支持通过环境变量来配置大多数设置。例如，设置管理员邮箱、SMTP 服务器等。具体的环境变量列表可以在 Vaultwarden wiki 中找到。
