@@ -55,7 +55,8 @@ Vaultwarden 是一个轻量级的 Bitwarden 服务器 API 实现，它用 Rust �
      environment:
        TZ: 'Asia/Shanghai'
        ADMIN_TOKEN: 'xxxxxx' #设置管理员token
-       SIGNUPS_VERIFY: 'true' #允许注册，一般在第一次注册之后关闭
+       SIGNUPS_ALLOWED: 'true' #允许注册，一般在第一次注册之后关闭
+       SIGNUPS_VERIFY: 'true' #设置注册邮箱验证，此处设置需要配置好SMTP才生效
      volumes:
        - './data:/data' #在docker-compose.yml同级目录创建的文件夹
      ports:
