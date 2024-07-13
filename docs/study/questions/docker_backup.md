@@ -26,6 +26,8 @@ if [ $WEEK_DAY -eq 0 ];then
 　　echo "今天是周天，全量备份"
 　　# 使用tar命令打包，打包后压缩,配合(https://github.com/Icestab/BackupToCos)使用
 　　# tar -zcf /mnt/data/docker/cos/data/backup.tar.gz /mnt/data/docker/pgback/postgis
+　　# 生成sha256校验值
+　　# sha256sum /mnt/data/docker/cos/data/backup.tar.gz > /mnt/data/docker/cos/data/backup.tar.gz.sha256
 　　# 旧的备份目录名称拼接上时间
 　　filename=pgback_$(date +%Y%m%d)
 　　# 修改旧的备份目录名称为filename
