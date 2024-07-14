@@ -25,7 +25,7 @@ if [ $WEEK_DAY -eq 0 ];then
 　　# 如果是周日，就全量更新，所谓全量备份就是把之前增量备份的文件夹名字换掉
 　　echo "今天是周天，全量备份"
 　　# 使用tar命令打包，打包后压缩,配合(https://github.com/Icestab/BackupToCos)使用
-　　# tar -zcf /mnt/data/docker/cos/data/backup.tar.gz /mnt/data/docker/pgback/postgis
+　　# tar -zcf /mnt/data/docker/cos/data/backup.tar.gz -C /mnt/data/docker/pgback postgis
 　　# 生成sha256校验值
 　　# sha256sum /mnt/data/docker/cos/data/backup.tar.gz > /mnt/data/docker/cos/data/backup.tar.gz.sha256
 　　# 旧的备份目录名称拼接上时间
