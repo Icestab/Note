@@ -90,6 +90,10 @@ export default defineConfig({
           {
             text: 'Linux 利用rsync实现全自动备份',
             link: '/study/questions/docker_backup'
+          },
+          {
+            text: '使用 Certbot 自动获取 SSL 证书并自动更新',
+            link: '/study/questions/certbot/certbot'
           }
         ]
       }
