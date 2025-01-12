@@ -101,3 +101,15 @@ ps：日志文件的名称最好拼接上时间，方便查看`日志文件绝�
 同时备份数据应该放在另外的磁盘上，防止数据丢失。如果必要可以同时将备份的数据上传到云存储，如阿里云 OSS、腾讯云 COS 等，以便在需要时恢复数据。
 
 使用[BackupToCos](https://github.com/Icestab/BackupToCos)并将脚本的`tar`注释取消即可实现备份，如果需要每天备份，把`tar`命令移动到`if`语句外即可。
+
+在特殊情况下备份目录的日期不会变（备份目录下面全是目录），这个时候文件控制会出问题，可以在备份目录新建一个文件夹用于存放`mv`后的文件夹，同时新增`touch`修改时间
+
+```sh
+mv /mnt/data/docker/pgback/postgis /mnt/data/docker/pgback/history/$filename
+# 更新文件夹的时间戳
+touch /mnt/data/docker/pgback/history/$filename
+...
+...
+# 文件所在的上级目录，以下就叫父目录吧
+FileDir=/mnt/data/docker/pgback/history
+```
