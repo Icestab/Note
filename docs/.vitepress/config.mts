@@ -55,7 +55,8 @@ export default defineConfig({
           { text: 'armbian 启用 smb 共享', link: 'life/samba' },
           { text: '本地化部署 vaultwarden 密码管理工具', link: '/life/vaultwarden' },
           { text: '关于更改微软账户密码后远程桌面仍然使用旧密码的问题', link: '/life/Microsoft' },
-          { text: '为不方便自定义 ip 设备配置自动旁路由网关', link: '/life/dnsmasq' }
+          { text: '为不方便自定义 ip 设备配置自动旁路由网关', link: '/life/dnsmasq' },
+          { text: '让旁路由丢掉 NAT', link: '/life/bypass/bypass' }
         ]
       },
       {
