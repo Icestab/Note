@@ -56,18 +56,16 @@ export default defineConfig({
           { text: '本地化部署 vaultwarden 密码管理工具', link: '/life/vaultwarden' },
           { text: '关于更改微软账户密码后远程桌面仍然使用旧密码的问题', link: '/life/Microsoft' },
           { text: '为不方便自定义 ip 设备配置自动旁路由网关', link: '/life/dnsmasq' },
-          { text: '让旁路由丢掉 NAT', link: '/life/bypass/bypass' }
-        ]
-      },
-      {
-        text: '前端',
-        collapsed: false,
-        items: [
+          { text: '让旁路由丢掉 NAT', link: '/life/bypass/bypass' },
           { text: '前端小技巧', link: '/study/html_css_js/html_css' },
-          { text: 'Vue日常笔记', link: '/study/html_css_js/vue1' },
-          { text: 'vscode无法运行npm脚本', link: '/study/pnpm' }
+          { text: 'Vue日常笔记', link: '/study/html_css_js/vue1' }
         ]
       },
+      // {
+      //   text: '前端',
+      //   collapsed: false,
+      //   items: []
+      // },
       {
         text: '文学',
         collapsed: false,
@@ -96,7 +94,8 @@ export default defineConfig({
           {
             text: '使用 Certbot 自动获取 SSL 证书并自动更新',
             link: '/study/questions/certbot/certbot'
-          }
+          },
+          { text: 'vscode无法运行npm脚本', link: '/study/pnpm' }
         ]
       }
     ],
@@ -105,7 +104,7 @@ export default defineConfig({
     docFooter: { prev: '上一页', next: '下一页' },
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024-present flysch'
+      copyright: 'Copyright © 2025-present flysch'
     },
     lastUpdatedText: '上次更新',
     returnToTopLabel: '返回顶部',
