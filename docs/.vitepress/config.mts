@@ -95,6 +95,10 @@ export default defineConfig({
             text: '使用 Certbot 自动获取 SSL 证书并自动更新',
             link: '/study/questions/certbot/certbot'
           },
+          {
+            text: '使用 Caddy TencentCloud 插件实现全自动 SSL 证书配置',
+            link: '/study/questions/caddy_dnspod'
+          },
           { text: 'vscode无法运行npm脚本', link: '/study/pnpm' }
         ]
       }
