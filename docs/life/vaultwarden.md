@@ -47,20 +47,20 @@ Vaultwarden 是一个轻量级的 Bitwarden 服务器 API 实现，它用 Rust �
    ```yaml
    version: '3.8'
    services:
-   vaultwarden:
-     image: vaultwarden/server:latest
-     container_name: vaultwarden
-     network_mode: bridge #使用默认的桥接网络
-     restart: always
-     environment:
-       TZ: 'Asia/Shanghai'
-       ADMIN_TOKEN: 'xxxxxx' #设置管理员token
-       SIGNUPS_ALLOWED: 'true' #允许注册，一般在第一次注册之后关闭
-       SIGNUPS_VERIFY: 'true' #设置注册邮箱验证，此处设置需要配置好SMTP才生效
-     volumes:
-       - './data:/data' #在docker-compose.yml同级目录创建的文件夹
-     ports:
-       - '8888:80' #映射80端口
+     vaultwarden:
+       image: vaultwarden/server:latest
+       container_name: vaultwarden
+       network_mode: bridge #使用默认的桥接网络
+       restart: always
+       environment:
+         TZ: 'Asia/Shanghai'
+         ADMIN_TOKEN: 'xxxxxx' #设置管理员token
+         SIGNUPS_ALLOWED: 'true' #允许注册，一般在第一次注册之后关闭
+         SIGNUPS_VERIFY: 'true' #设置注册邮箱验证，此处设置需要配置好SMTP才生效
+       volumes:
+         - './data:/data' #在docker-compose.yml同级目录创建的文件夹
+       ports:
+         - '8888:80' #映射80端口
    ```
    你在其他地方可能会看到关于 websocket 的配置，我这里没有配置，因为翻阅官方文档后发现，Vaultwarden 默认已经支持 websocket，所以无需额外配置。
 
