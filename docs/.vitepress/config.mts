@@ -100,7 +100,11 @@ export default defineConfig({
             text: '使用 Caddy TencentCloud 插件实现全自动 SSL 证书配置',
             link: '/study/questions/caddy_dnspod'
           },
-          { text: 'vscode无法运行npm脚本', link: '/study/pnpm' }
+          { text: 'vscode无法运行npm脚本', link: '/study/pnpm' },
+          {
+            text: 'PVE8- ZFS 阵列重组 替换硬盘，修复 efi 启动引导',
+            link: '/study/questions/pve8-zfs'
+          }
         ]
       }
     ],
