@@ -91,6 +91,7 @@ export default defineConfig({
             text: 'Linux 利用rsync实现全自动备份',
             link: '/study/questions/docker_backup'
           },
+          { text: '使用coscmd快速将本地文件备份到COS', link: '/study/questions/coscmd' },
           {
             text: '使用 Certbot 自动获取 SSL 证书并自动更新',
             link: '/study/questions/certbot/certbot'
