@@ -99,6 +99,11 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 由于 fish 自带了很多功能，属于开箱即用的状态所以也没啥推荐的（自动建议、语法高亮都自带了，其中 sudo 键位为`ALT+s`），不过因为我习惯了 Z 插件，同时需要 nodejs 环境，所以安装了这两个。
 
 - nvm:`fisher install jorgebucaran/nvm.fish`
+  :::tip 提示
+  通过 nvm 安装 node 每次打开终端都需要 nvm use Vx.x.x 才能使用，解决办法：  
+  在家目录新建`.nvmrc`文件，并写入你需要默认启动的 node 版本，比如`V22.15.0`
+  打开`config.fish`文件，在里面加入`nvm use > /dev/null`,这样每次打开终端都能愉快的使用 node 了。
+  :::
 
 - z:`fisher install jethrokuan/z`
 
