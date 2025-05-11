@@ -302,7 +302,7 @@ localhost.crt: OK
 
 openssl req -new -newkey rsa:2048 -sha256 -nodes -out ip.csr -keyout ip.key -subj "/C=CN/ST=Beijing/L=Beijing/O=Super Inc./OU=Web Security/CN=ip"
 
-openssl x509 -req -days 365 -in ip.csr -signkey ip.key -out ip.crt -extfile http.ext
+openssl x509 -req -days 365 -in ip.csr -signkey ip.key -out ip.crt -extfile cert.ext
 ```
 
 新建文件`cert.ext`输入如下内容保存
