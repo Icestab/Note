@@ -136,7 +136,7 @@ graph LR
 
 2. **证书缓存策略**：
 
-   ```caddyfile
+   ```js
    {
        acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
        acme_dns tencentcloud {
