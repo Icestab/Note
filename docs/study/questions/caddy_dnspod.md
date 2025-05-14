@@ -64,7 +64,7 @@ docker build -t caddy-tencentcloud .
 
 ### 3. Caddyfile 配置
 
-```caddyfile
+```js
 example.com {
     tls {
         dns tencentcloud {env.TENCENTCLOUD_SECRET_ID} {env.TENCENTCLOUD_SECRET_KEY}
@@ -90,7 +90,7 @@ docker run -d \
 
 ### 1. 优化后的 Caddyfile 结构
 
-```caddyfile
+```js
 {
     acme_dns tencentcloud {
         secret_id {env.TENCENTCLOUD_SECRET_ID}
@@ -99,14 +99,10 @@ docker run -d \
 }
 
 example.com {
-    tls your@email.com  # 使用全局ACME配置
     respond "Hello, 全站自动化HTTPS！"
 }
 
 api.example.com {
-    tls {
-        dns tencentcloud {env.TENCENTCLOUD_SECRET_ID} {env.TENCENTCLOUD_SECRET_KEY}
-    }
     reverse_proxy localhost:8080
 }
 ```
