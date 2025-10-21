@@ -58,7 +58,11 @@ export default defineConfig({
           { text: '为不方便自定义 ip 设备配置自动旁路由网关', link: '/life/dnsmasq' },
           { text: '让旁路由丢掉 NAT', link: '/life/bypass/bypass' },
           { text: '前端小技巧', link: '/study/html_css_js/html_css' },
-          { text: 'Vue日常笔记', link: '/study/html_css_js/vue1' }
+          { text: 'Vue日常笔记', link: '/study/html_css_js/vue1' },
+          {
+            text: '突破限制：用 Termux 和 rsync 实现 Android 文件的真正增量备份',
+            link: '/life/termux_rsync'
+          }
         ]
       },
       // {
