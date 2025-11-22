@@ -62,6 +62,10 @@ export default defineConfig({
           {
             text: '突破限制：用 Termux 和 rsync 实现 Android 文件的真正增量备份',
             link: '/life/termux_rsync'
+          },
+          {
+            text: '一次家庭网络故障排查：DNS环路导致的连接数爆表',
+            link: '/life/dns_question'
           }
         ]
       },
