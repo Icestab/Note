@@ -112,6 +112,10 @@ export default defineConfig({
           {
             text: 'PVE8- ZFS 阵列重组 替换硬盘，修复 efi 启动引导',
             link: '/study/questions/pve8-zfs'
+          },
+          {
+            text: '解决WSL中Archlinux Docker网络代理问题',
+            link: '/study/questions/wsl_docker'
           }
         ]
       }
