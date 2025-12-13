@@ -44,6 +44,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '红米2100路由器刷机', link: '/life/RM2100' },
+          { text: '小米 Redmi AX6 自定义 OpenWrt 固件编译全记录', link: '/life/AX6' },
           { text: '科学上网', link: '/life/ss/vpn' },
           { text: 'Debian 配置 shadowsocks-libev', link: '/life/ss/ss' },
           { text: 'OpenWRT 配置 WireGuard 服务端及客户端配置教程', link: '/life/wg/wg' },
