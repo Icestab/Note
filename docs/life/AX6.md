@@ -40,8 +40,6 @@ AX6 是 OpenWrt 社区热门机型之一，不仅有大量现成的编译固件�
 
 非常感谢这两位作者的付出，让我能够顺利完成这次自定义固件编译。
 
----
-
 ## 一、破解 AX6 并刷入过渡固件
 
 要想给 AX6 刷入自己编译的 OpenWrt，第一步当然是破解。
@@ -50,8 +48,6 @@ AX6 是 OpenWrt 社区热门机型之一，不仅有大量现成的编译固件�
 👉 [https://www.right.com.cn/forum/thread-8455880-1-1.html](https://www.right.com.cn/forum/thread-8455880-1-1.html)
 
 完成后，你可以选择刷入作者推荐的固件，或继续往下进行完全自定义固件的编译。
-
----
 
 ## 二、自定义 OpenWrt 固件编译
 
@@ -108,8 +104,6 @@ make -j$(nproc)
 
 欢迎有兴趣的朋友下载体验，也欢迎 PR 或讨论。
 
----
-
 ## 三、一些额外经验分享
 
 ### 1. 关于 WSL 或 Linux 环境编译
@@ -136,8 +130,6 @@ export FORCE_UNSAFE_CONFIGURE=1
 
 或将 build_dir、staging_dir 等放进 RAM（若内存足够）。
 
----
-
 ## 四、总结：AX6 是 AC2100+N1 升级的完美选择
 
 经过这次编译和部署，我可以很好地确认：
@@ -148,8 +140,6 @@ export FORCE_UNSAFE_CONFIGURE=1
 - 社区资源丰富，可长期维护
 
 如果你也在寻找一款百元级的高性能 OpenWrt 路由器，AX6 绝对值得考虑。
-
----
 
 ## 后记
 
