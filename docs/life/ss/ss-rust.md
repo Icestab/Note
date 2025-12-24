@@ -84,7 +84,7 @@ U4x7Pp9e7YpZ0cZb...
 示例路径：
 
 ```bash
-/etc/shadowsocks-rust/server.json
+/etc/shadowsocks-rust/config.json
 ```
 
 示例内容：
@@ -127,7 +127,7 @@ Wants=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks-rust/server.json
+ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks-rust/config.json
 Restart=on-failure
 RestartSec=5
 
@@ -215,8 +215,8 @@ sysctl --system
 验证：
 
 ```bash
-sysctl net.ipv4.tcp_congestion_control
-sysctl net.core.default_qdisc
+sudo sysctl net.ipv4.tcp_congestion_control
+sudo sysctl net.core.default_qdisc
 ```
 
 ## 八、关于 nofile / ulimit
