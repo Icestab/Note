@@ -47,6 +47,7 @@ export default defineConfig({
           { text: '小米 Redmi AX6 自定义 OpenWrt 固件编译全记录', link: '/life/AX6' },
           { text: '科学上网', link: '/life/ss/vpn' },
           { text: 'Debian 配置 shadowsocks-libev', link: '/life/ss/ss' },
+          { text: 'Debian 配置 shadowsocks-rust', link: '/life/ss/ss-rust' },
           { text: 'OpenWRT 配置 WireGuard 服务端及客户端配置教程', link: '/life/wg/wg' },
           { text: 'Netflix UWP Windows客户端除网络隔离的方法', link: '/life/netflix' },
           { text: 'Ventoy 安装教程', link: '/life/ventoy/ventoy' },
