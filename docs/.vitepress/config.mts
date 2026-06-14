@@ -118,6 +118,10 @@ export default defineConfig({
           {
             text: '解决WSL中Archlinux Docker网络代理问题',
             link: '/study/questions/wsl_docker'
+          },
+          {
+            text: '无图形界面 Debian 用 KVM 安装飞牛 fnOS 完整指南',
+            link: '/study/questions/debian_kvm_fnos'
           }
         ]
       }
