@@ -68,6 +68,10 @@ export default defineConfig({
           {
             text: '一次家庭网络故障排查：DNS环路导致的连接数爆表',
             link: '/life/dns_question'
+          },
+          {
+            text: '使用一台电视盒子，把旧 HP 打印机秒变网络打印机',
+            link: '/life/n1_cups'
           }
         ]
       },
