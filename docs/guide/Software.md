@@ -34,7 +34,7 @@
 | GEEK           |                                  有时电脑遇到软件无法卸载，软件残留注册表影响软件安装。软件繁多，难于统一管理？Geek Uninstaller 都可以解决。                                   |      https://geekuninstaller.com/download      |
 | Rufus          |                                             Rufus 是一个帮助格式化和创建可启动 USB 闪存驱动器的工具，如 USB 钥匙/软盘、记忆棒等。                                              |              https://rufus.ie/zh/              |
 | TrafficMonitor |                                          这是一个用于显示当前网速、CPU 及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。                                          | https://github.com/zhongyang219/TrafficMonitor |
-| 图吧工具箱     |                                                                                                                                                                                |             https://www.tbtool.cn/             |
+| 图吧工具箱     |      图吧工具箱，是开源、免费、绿色、纯净的硬件检测工具合集，专为所有计算机硬件极客、DIY爱好者、各路大神及小白制作。集成大量常见硬件检测、评分工具，一键下载、方便使用。       |             https://www.tbtool.cn/             |
 
 ## ed2k 链接：
 
