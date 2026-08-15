@@ -14,7 +14,7 @@
 
 **Ventoy** 会自动扫描 U 盘里的 .iso 文件，并自动识别出它是什么系统，然后帮你建立对应的启动引导菜单！所以，需要给启动盘增加或移除一个操作系统，只是将 .iso 文件复制进去或者删除掉即可，就是这么简单，没有任何复杂或耗时的步骤。
 
-**Ventoy** 支持的系统非常丰富，其中包括主流的 Windows 11 / Win10 / 8.1 / 8 / 7、WinPE (微 PE 工具箱)、 Windows Server 2022/2019/2016/2012、Ubuntu、CentOS、Debian、RHEL、Deepin、Fedora、Linux Mint、 Elementary OS、Manjaro、VMware ESXi、openSUSE、Arch、FydeOS、 CloudReady、 ChromeOS Flex 等超过 216 款！而且还在不断增加中，具体可参考[官网列表]([test list . Ventoy](https://www.ventoy.net/cn/isolist.html))。
+**Ventoy** 支持的系统非常丰富，其中包括主流的 Windows 11 / Win10 / 8.1 / 8 / 7、WinPE (微 PE 工具箱)、 Windows Server 2022/2019/2016/2012、Ubuntu、CentOS、Debian、RHEL、Deepin、Fedora、Linux Mint、 Elementary OS、Manjaro、VMware ESXi、openSUSE、Arch、FydeOS、 CloudReady、 ChromeOS Flex 等超过 216 款！而且还在不断增加中，具体可参考[官网列表](https://www.ventoy.net/cn/isolist.html)。
 
 ## 制作启动盘教程:
 

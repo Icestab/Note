@@ -12,7 +12,7 @@
 
 在中国大陆，本工具广泛用于突破[防火长城](https://www.tw.wiiaa.top/baike-防火长城)（GFW），以浏览被封锁、遮蔽或干扰的内容。2015 年 8 月 22 日，Shadowsocks 原作者 Clowwindy 称受到了[中华人民共和国政府的压力](https://www.tw.wiiaa.top/baike-中华人民共和国网络审查)，宣布停止维护此计划（项目）并移除其个人页面所存储的源代码[[4\]](https://www.tw.wiiaa.top/wiki/Shadowsocks#cite_note-4)[[5\]](https://www.tw.wiiaa.top/wiki/Shadowsocks#cite_note-effchinacoder-5)。
 
-为了避免[关键词过滤](https://www.tw.wiiaa.top/baike-关键词过滤)，网民会根据[谐音](<https://www.tw.wiiaa.top/baike-諧音_(語言學)>)将 ShadowsocksR 称为“酸酸乳”[[注 1\]](https://www.tw.wiiaa.top/wiki/Shadowsocks#cite_note-6)（SSR），将Shadowsocks称为“酸酸”（SS）。另外Shadowsocks的标志为纸飞机，而专门提供Shadowsocks或类似软件（如V2Ray）服务器的网站也被称为“机场”。
+为了避免[关键词过滤](https://www.tw.wiiaa.top/baike-关键词过滤)，网民会根据[谐音](https://www.tw.wiiaa.top/baike-諧音_(語言學))将 ShadowsocksR 称为“酸酸乳”[[注 1\]](https://www.tw.wiiaa.top/wiki/Shadowsocks#cite_note-6)（SSR），将Shadowsocks称为“酸酸”（SS）。另外Shadowsocks的标志为纸飞机，而专门提供Shadowsocks或类似软件（如V2Ray）服务器的网站也被称为“机场”。
 
 ### 1.2 SS 搭建
 
