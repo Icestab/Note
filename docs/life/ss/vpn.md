@@ -51,9 +51,9 @@ systemctl start shadowsocks
 
 我个人使用的是这个版本，最新**v3.3.5**上次更新 2020 年 9 月，算是比较新的，而且网上也能下载到一键搭建脚本，使用比较方便。
 
-第一次搭建使用的脚本为<a href="/ss/shadowsocks-libev-old.sh">shadowsocks-libev.sh</a>,安装脚本提示一步一步进行就可以了，可以说是非常简单，在使用大约两年后想起升级，于是再次运行这个脚本，虽然 ss-server 版本升级了，但是客服端却无法连接了；在细心阅读脚本文件后任然找不到原因。
+第一次搭建使用的脚本为<a href="/ss/shadowsocks-libev-old.sh" target="_blank" rel="noopener">shadowsocks-libev.sh</a>,安装脚本提示一步一步进行就可以了，可以说是非常简单，在使用大约两年后想起升级，于是再次运行这个脚本，虽然 ss-server 版本升级了，但是客服端却无法连接了；在细心阅读脚本文件后任然找不到原因。
 
-于是乎去网上找了另外一个安装脚本<a href="/ss/centos-shadowsocks-libev.sh">centos-shadowsocks-libev.sh</a>
+于是乎去网上找了另外一个安装脚本<a href="/ss/centos-shadowsocks-libev.sh" target="_blank" rel="noopener">centos-shadowsocks-libev.sh</a>
 
 在执行前需要卸载原版本，方法很简单`./shadowsocks-libev.sh uninstall`提示是否卸载，输入 y 即可。
 
@@ -128,7 +128,7 @@ Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，
 
 `net.ipv4.tcp_available_congestion_control = reno cubic bbr`
 
-这里我提供一键配置 bbr 脚本<a href="/ss/bbr.sh">点击下载</a>，按照提示运行即可。
+这里我提供一键配置 bbr 脚本<a href="/ss/bbr.sh" target="_blank" rel="noopener">点击下载</a>，按照提示运行即可。
 
 ## 2、VPN
 
