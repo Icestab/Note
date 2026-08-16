@@ -51,9 +51,9 @@ systemctl start shadowsocks
 
 我个人使用的是这个版本，最新**v3.3.5**上次更新 2020 年 9 月，算是比较新的，而且网上也能下载到一键搭建脚本，使用比较方便。
 
-第一次搭建使用的脚本为[shadowsocks-libev.sh](https://notes.flysch.top/ss/shadowsocks-libev-old.sh),安装脚本提示一步一步进行就可以了，可以说是非常简单，在使用大约两年后想起升级，于是再次运行这个脚本，虽然 ss-server 版本升级了，但是客服端却无法连接了；在细心阅读脚本文件后任然找不到原因。
+第一次搭建使用的脚本为[shadowsocks-libev.sh](/ss/shadowsocks-libev-old.sh),安装脚本提示一步一步进行就可以了，可以说是非常简单，在使用大约两年后想起升级，于是再次运行这个脚本，虽然 ss-server 版本升级了，但是客服端却无法连接了；在细心阅读脚本文件后任然找不到原因。
 
-于是乎去网上找了另外一个安装脚本[centos-shadowsocks-libev.sh](https://notes.flysch.top/ss/centos-shadowsocks-libev.sh)
+于是乎去网上找了另外一个安装脚本[centos-shadowsocks-libev.sh](/ss/centos-shadowsocks-libev.sh)
 
 在执行前需要卸载原版本，方法很简单`./shadowsocks-libev.sh uninstall`提示是否卸载，输入 y 即可。
 
@@ -128,7 +128,7 @@ Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，
 
 `net.ipv4.tcp_available_congestion_control = reno cubic bbr`
 
-这里我提供一键配置 bbr 脚本[点击下载](https://notes.flysch.top/ss/bbr.sh)，按照提示运行即可。
+这里我提供一键配置 bbr 脚本[点击下载](/ss/bbr.sh)，按照提示运行即可。
 
 ## 2、VPN
 
@@ -207,7 +207,7 @@ PPTP 是搭建最为简单，但也是最不推荐的一种，我个人比较钟
 
 问题主要体现在打开代理无论 pac 模式还是全局模式，有概率无法代理 APP 流量，经常导致 steam，google play 等软件很长时间无法正常使用（非常抓狂）。
 
-想知道路由器刷固件的可以参考我另外一个[文章](https://github.flysch.cn/life/RM2100.html)
+想知道路由器刷固件的可以参考我另外一个[文章](../RM2100)
 
 ### 2.3 VPN 搭建
 
