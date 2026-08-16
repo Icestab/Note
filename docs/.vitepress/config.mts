@@ -11,6 +11,9 @@ export default defineConfig({
   title: '个人杂记',
   description: 'A Notes Site',
   lastUpdated: true,
+  // public/ 目录下的静态文件(如 /ss/*.sh)会原样复制到站点根目录，
+  // 但 VitePress 的死链检查器不检查 public 目录，需显式忽略
+  ignoreDeadLinks: [/^\/ss\//],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     search: {
