@@ -40,19 +40,19 @@ uname -m
 ```bash
 cd /tmp
 
-wget https://github.com/shadowsocks/shadowsocks-rust/releases/download/v1.24.0/shadowsocks-v1.19.4.x86_64-unknown-linux-gnu.tar.xz
+wget https://github.com/shadowsocks/shadowsocks-rust/releases/download/v1.25.0/shadowsocks-v1.25.0.x86_64-unknown-linux-gnu.tar.xz
 ```
 
 或使用 `curl`：
 
 ```bash
-curl -LO https://github.com/shadowsocks/shadowsocks-rust/releases/download/v1.24.0/shadowsocks-v1.19.4.x86_64-unknown-linux-gnu.tar.xz
+curl -LO https://github.com/shadowsocks/shadowsocks-rust/releases/download/v1.25.0/shadowsocks-v1.25.0.x86_64-unknown-linux-gnu.tar.xz
 ```
 
 ### 3️⃣ 解压并安装到 /usr/local/bin
 
 ```bash
-tar -xf shadowsocks-v1.24.0.x86_64-unknown-linux-gnu.tar.xz
+tar -xf shadowsocks-v1.25.0.x86_64-unknown-linux-gnu.tar.xz
 
 sudo install -m 0755 ssserver ssservice ssurl /usr/local/bin/
 ```
