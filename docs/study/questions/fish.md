@@ -94,25 +94,88 @@ echo $SHELL
 
 :::
 
-可视化配置：`fish_config`
+配置 prompt 与主题有两种方式：网页配置，或者直接在终端里用 `fish_config` 的命令行子命令配置。
+
+**网页配置**
+
+不带参数运行 `fish_config` 会启动一个本地 web 服务并打开浏览器，可以点击选择 prompt、主题、查看函数和历史等。
+
 ![f1](./image/f1.webp)
+
+**命令行配置**
+
+`fish_config` 也支持在终端里直接配置，完全不需要浏览器，远程服务器上尤其方便：
+
+```fish
+fish_config prompt list          # 列出内置的示例 prompt
+fish_config prompt show          # 预览所有示例 prompt 长什么样
+fish_config prompt choose        # 选择一个 prompt（仅当前会话生效）
+fish_config prompt save          # 持久保存当前 prompt（写入 fish_prompt.fish）
+
+fish_config theme list           # 列出所有配色主题
+fish_config theme show           # 预览主题效果
+fish_config theme choose <名称>  # 选择主题（仅当前会话生效）
+```
 
 ::: tip 提示
 
-如果是连接的远程服务器可能无法打开，这个时候可以在本地配置好后把`prompt`复制到远程服务器上
-`~/.config/fish/functions/fish_prompt.fish`
+连接远程服务器时如果打不开浏览器，直接用上面的命令行子命令配置即可，不需要像早期那样先在本地配置好、再把 `prompt` 文件拷贝到远程服务器的 `~/.config/fish/functions/fish_prompt.fish`。
+
+:::
+
+::: tip 主题如何持久生效
+
+`fish_config theme choose` 只在当前会话生效，重启就没了。网上不少旧教程让你接着跑 `fish_config theme save` 持久化，但这条在 fish 4.3 之后已经失效：
+
+- `theme save` 只是把颜色写入 universal 变量，而 fish 4.3 起主题改在启动时用全局变量应用，不再读取这些 universal 变量，所以 `save` 完重启仍然不生效（该子命令也因此从官方文档中移除）。
+
+正确做法是把 `choose` 命令写进 `config.fish`，让每次启动的会话都自动应用主题：
+
+```fish
+# ~/.config/fish/config.fish
+fish_config theme choose dracula
+```
+
+这和 fish 4.3 官方发布说明的建议一致：主题直接在 `config.fish` 里设置。
+
 :::
 
 ### 4. 个性化
 
-配置 nano 的 tab 为现在更常见的 4 空格
+配置 nano 的 tab 为现在更常见的 4 空格，并开启自动缩进（换行时自动对齐上一行）：
 
 ```fish
 nano ~/.nanorc
 
 # .nanorc
 set tabsize 4
+set autoindent
 ```
+
+**nano 高频命令速查**
+
+nano 默认使用的是「经典」按键（下表即默认配置）。网上不少教程写的 `Ctrl+Z` 撤销、`Ctrl+G` 下一个匹配等，其实是较新版本可选的 `--modernbindings` 模式，两者按键完全不同，默认没开启。
+
+| 按键 | 功能 |
+| --- | --- |
+| `Ctrl+O` | 保存（Write Out） |
+| `Ctrl+X` | 退出 |
+| `Ctrl+G` | 打开帮助（所有按键都在里面） |
+| `Ctrl+K` | 剪切当前行 |
+| `Ctrl+U` | 粘贴 |
+| `Alt+6` | 复制（先用 `Ctrl+6`/`Ctrl+^` 标记选区） |
+| `Ctrl+W` | 搜索 |
+| `Ctrl+\` | 查找并替换 |
+| `Ctrl+/` 或 `Alt+G` | 跳转到指定行 |
+| `Alt+U` | 撤销 |
+| `Alt+E` | 重做 |
+| `Ctrl+C` | 显示光标位置 |
+| `Ctrl+A` / `Ctrl+E` | 光标跳到行首 / 行尾 |
+| `Ctrl+R` | 插入另一个文件 |
+| `Ctrl+J` | 当前段落两端对齐 |
+| `Ctrl+T` | 执行 shell 命令并把输出插入光标处 |
+
+> 全部按键可随时按 `Ctrl+G` 查看，改了 `nanorc` 后无需重启，重新打开文件即生效。
 
 配置 alias 在 Fish shell 中，你可以通过创建一个名为 rm 的函数来模拟 rm -i 的行为。这样，每次你运行 rm 时，它都会以交互模式运行，提示你确认是否真的要删除文件。
 
