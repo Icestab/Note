@@ -8,19 +8,26 @@
 | Chrome      |                                                                                             Google Chrome 是一款由 Google 公司开发的网页浏览器，目标是提升稳定性、速度和安全性，并创造出简单且有效率的使用者界面。                                                                                             |           https://www.google.cn/intl/zh-CN/chrome/            |
 | 微信        |                                                                                                       微信（WeChat） 是腾讯公司于 2011 年 1 月 21 日推出的一个为智能终端提供即时通讯服务的免费应用程序。                                                                                                       |                    https://weixin.qq.com/                     |
 | QQ          |                                                                                                                             QQ，是腾讯 QQ 的简称，是一款基于互联网的即时通信软件。                                                                                                                             |                   https://im.qq.com/index/                    |
-| Office2019  |                                                                                         Microsoft Office 是由 Microsoft(微软)公司开发的一套基于 Windows 操作系统的办公软件套装。点击后复制链接使用第三方下载工具下载！                                                                                         |             [点击查看](./Software.md#office2019)              |
+| 微信输入法   |                                                                                     腾讯出品的跨平台输入法，支持 Windows、macOS、Android、iOS，简洁无广告、打字快，支持跨设备同步词库与语音输入。                                                                                      |                      https://z.weixin.qq.com/                      |
+| Microsoft 365 / Office 2024 | Microsoft 推出的办公软件套装。Microsoft 365 为订阅制，功能持续更新、含 1TB 云存储，官方推荐；Office 2024 为买断制最新版本。注意：Office 2019 及更早版本已于 2025 年 10 月停止安全更新，不建议再使用。 | https://www.microsoft.com/zh-cn/microsoft-365/buy/compare-all-microsoft-365-products |
+| WPS Office   |                                                     金山办公出品的免费办公软件，兼容 Word / Excel / PPT 格式，体积小巧、启动迅速，支持多人在线协作，个人版免费。                                                     |             https://wps.cn/product/wps-office              |
 | 360 压缩    |                                                                                                        360 唯一一款良心软件，360 压缩是 360 推出的免费解压缩软件,360 压缩快速轻巧、兼容性好、永久免费。                                                                                                        |                     https://yasuo.360.cn/                     |
 | Typedown    | Typedown 是一款专为 Windows 11 平台设计的轻量级 Markdown 编辑器。无预览窗口、无各种标记、所见即所得，支持 LaTeX 公式编辑、流程图绘制和支持多种语言代码高亮。借助 WinUI 框架，它为用户提供了与操作系统完美匹配的界面和高效的编辑体验。无论您是撰写技术文档、学术论文还是博客文章，Typedown 都将是您的得力助手！ | https://apps.microsoft.com/detail/9P8TCW4H2HB4?hl=zh-cn&gl=CN |
 | NDM         |                                                                                          Neat Download Manager is a free Internet Download Manager for macOS (OS X 10.10 or higher) and Windows (Windows 7 or higher)                                                                                          |       https://www.neatdownloadmanager.com/index.php/en/       |
 | HashMyFiles |                             HashMyFiles is small utility that allows you to calculate the hashes (MD5, SHA1, CRC32, SHA-256, SHA-512, SHA-384) of one or more files in your system. You can easily copy the hashes list into the clipboard, or save them into text/html/xml file.                              |       https://www.nirsoft.net/utils/hash_my_files.html        |
+| Everything  |                             Windows 上极快的文件名搜索工具，几乎秒出结果。基于 NTFS 文件系统的 USN Journal 实现，只搜文件名不搜内容，体积仅几 MB，是本地文件检索的必备神器。                              |       https://www.voidtools.com/zh-cn/        |
 
 ## 开发工具
 
 | 软件名称       |                                                                          介绍                                                                          |                     下载地址                     |
 | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------: |
-| Xshell7\|Xftp7 |                                                   业界最强大的 SSH 客户机、轻松地通过网络传输文件。                                                    | https://www.xshell.com/zh/free-for-home-school/  |
-| RDM            |                            跨平台 开源 Redis ® 管理工具 RDM 是易于使用的 GUI 工具，可用于 Windows，Linux，MacOS 和 iPadOS。                            | https://cloud.189.cn/web/share?code=Y7jyQfFnuQbi |
-| WindTerm       |                                          A Quicker and better SSH/Telnet/Serial/Shell/Sftp client for DevOps.                                          | https://github.com/kingToolbox/WindTerm/releases |
+| MobaXterm     |                                 一款增强型 Windows 终端工具，集成了 X11 服务器、SSH 客户端、SFTP、串口等多种远程工具，单文件绿色版即可使用，功能全面，适合运维和开发。                                  |        https://mobatek.net/en/download        |
+| VS Code       |                                             微软出品的免费代码编辑器，插件生态极其丰富，支持几乎所有编程语言，是目前最主流的编辑器之一。                                             |          https://code.visualstudio.com/          |
+| Git           |                                              最流行的分布式版本控制系统，几乎是开发必备，官网提供各平台安装包及源码。                                              |            https://git-scm.com/downloads            |
+| WinSCP        |                                             Windows 上经典的 SFTP/FTP 客户端，图形化操作远程文件很方便，可与 PuTTY 配合使用。                                              |         https://winscp.net/eng/download.php         |
+| DBeaver       |                                             开源免费的数据库管理工具，支持 MySQL、PostgreSQL、SQLite 等几乎所有主流数据库，社区版功能已足够强大。                                              |            https://dbeaver.io/download/            |
+| DBX           |                                             仅 25MB 的轻量级跨平台数据库客户端，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB 等 100+ 种数据库，内置 AI 助手与 MCP，提供桌面端、Docker、CLI。                                              |                https://dbxio.com                |
+| Apifox        |                                             国产的一体化 API 协作平台，集接口文档、调试、Mock、自动化测试于一身，替代 Postman 的不错选择。                                              |                https://apifox.com/                |
 | PowerShell 7   | PowerShell 是一种跨平台的任务自动化解决方案，由命令行 shell、脚本语言和配置管理框架组成(系统自带的是 5，最新的 7 有自动补全等功能，建议自行安装到 7)。 |   https://learn.microsoft.com/zh-cn/powershell   |
 
 ## 系统资源
@@ -29,15 +36,9 @@
 | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------: |
 | Windows10      |                           Windows 10，是由微软公司（Microsoft）开发的操作系统，应用于计算机和平板电脑等设备。点击后复制链接使用第三方下载工具下载！                            |      https://www.ithome.com/0/655/926.htm      |
 | Windows11      | Windows 11 是由微软公司（Microsoft）开发的操作系统，应用于计算机和平板电脑等设备 。于 2021 年 6 月 24 日发布 ，2021 年 10 月 5 日发行 。点击后复制链接使用第三方下载工具下载！ |      https://www.ithome.com/0/655/926.htm      |
-| MicroKMS       |                               目前 MicroKMS 神龙版能激活 win10、win8/8.1、win7 以及 server2008/2012/2016/2019 等系统版本，同时支持激活 office 。                               |    http://www.yishimei.cn/network/319.html     |
+| DragonKMS      |                               目前 DragonKMS 神龙版能激活 win10、win8/8.1、win7 以及 server2008/2012/2016/2019 等系统版本，同时支持激活 office 。                               |    http://www.yishimei.cn/network/319.html     |
 | 微 pe          |                                                                   个人使用所有 pe 中最干净的一款，推荐使用！                                                                   |     https://www.wepe.com.cn/download.html      |
 | GEEK           |                                  有时电脑遇到软件无法卸载，软件残留注册表影响软件安装。软件繁多，难于统一管理？Geek Uninstaller 都可以解决。                                   |      https://geekuninstaller.com/download      |
 | Rufus          |                                             Rufus 是一个帮助格式化和创建可启动 USB 闪存驱动器的工具，如 USB 钥匙/软盘、记忆棒等。                                              |              https://rufus.ie/zh/              |
 | TrafficMonitor |                                          这是一个用于显示当前网速、CPU 及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。                                          | https://github.com/zhongyang219/TrafficMonitor |
 | 图吧工具箱     |      图吧工具箱，是开源、免费、绿色、纯净的硬件检测工具合集，专为所有计算机硬件极客、DIY爱好者、各路大神及小白制作。集成大量常见硬件检测、评分工具，一键下载、方便使用。       |             https://www.tbtool.cn/             |
-
-## ed2k 链接：
-
-### Office2019
-
-ed2k://|file|cn_office_professional_plus_2019_x86_x64_dvd_5e5be643.iso|3775004672|1E4FFA5240F21F60DC027F73F1C62FF4|/
